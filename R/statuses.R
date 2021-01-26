@@ -181,8 +181,8 @@ updateStatus <- function(text, lat=NULL, long=NULL, placeID=NULL,
   if (!has_oauth_token())
     stop("updateStatus requires OAuth authentication")
 
-  if (nchar(text) > 140 && !bypassCharLimit)
-    stop("Status can not be more than 140 characters")
+  if (nchar(text) > 280 && !bypassCharLimit)
+    stop("Status can not be more than 280 characters")
 
   params = buildCommonArgs(lat=lat, long=long, place_id=placeID,
                             display_coordinates=displayCoords,
